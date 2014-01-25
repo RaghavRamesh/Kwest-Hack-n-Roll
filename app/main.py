@@ -1,4 +1,5 @@
 import flask, flask.views
+from app import app
 
 # Views
 from login import Login 
@@ -8,12 +9,8 @@ from challengeInfo import ChallengeInfo
 from challengeCreate import ChallengeCreate
 from shop import Shop
 from profile import Profile
-
-
-app = flask.Flask(__name__)
-
 # Routes
-app.add_url_rule('/login',
+app.add_url_rule('/',
 	view_func=Login.as_view('login'),
 	methods=['GET', 'POST'])
 app.add_url_rule('/profile',
@@ -31,5 +28,3 @@ app.add_url_rule('/challengeCreate',
 app.add_url_rule('/shop',
 	view_func=Shop.as_view('shop'),
 	methods=['GET', 'POST'])
-
-app.run(debug = True)
