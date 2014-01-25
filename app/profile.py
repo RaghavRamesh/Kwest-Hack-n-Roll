@@ -5,4 +5,7 @@ class Profile(flask.views.MethodView):
 
 		return flask.render_template('profile.html')
 
+	def post(self):
+
+		return flask.render_template('profile.html')
 	
