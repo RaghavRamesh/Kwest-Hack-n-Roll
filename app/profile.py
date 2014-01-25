@@ -12,4 +12,9 @@ class Profile(flask.views.MethodView):
 		# 	pending.timeLeft
 		return flask.render_template('profile.html')
 
-		
+
+	def post(self):
+
+		return flask.render_template('profile.html')
+	
+
