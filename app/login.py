@@ -7,8 +7,9 @@ class Login(flask.views.MethodView):
 		return flask.render_template('login.html')
 
 	def post(self):
-		user = database.Users(email = request.form['username'],password = request.form['password'])
-		success = database.User.loginCheck(user)
+		
+		success = database.User.loginCheck(request.form['username'],request.form['password'])
+		print success
 		if(success):
 			return flask.render_template('profile.html')
 		else:

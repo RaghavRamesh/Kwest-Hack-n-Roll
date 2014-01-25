@@ -57,6 +57,8 @@ class Users(db.Model):
 		self.experience = kwargs.get('experience',0)
 		self.money = kwargs.get('money',0)
 
+	def loginCheck(self, mail,pas):
+		return db.session.query(Users).filter_by(email = mail, password=pas).count()
 
 class Answers(db.Model):
 	__tablename__="Answers"
