@@ -8,7 +8,7 @@ import constants
 import requests
 import simplejson
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///home/ubuntu/hacknroll/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C://Users//dell//Desktop//Kwest//test.db'
 # app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
