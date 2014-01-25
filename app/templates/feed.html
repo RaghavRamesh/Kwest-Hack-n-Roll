@@ -1,82 +1,407 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Kwest</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../static/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="../bower_components/respond/dest/respond.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript">
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
 
-     var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23019901-1']);
-      _gaq.push(['_setDomainName', "bootswatch.com"]);
-        _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
+<head>
+<meta charset="utf-8">
+<title>Kwest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="">
+<meta name="author" content="">
 
-     (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
+<!-- Le styles -->
+<link href="../static/css/lib/bootstrap.css" rel="stylesheet">
+<link href="../static/css/lib/bootstrap-responsive.css" rel="stylesheet">
+<link href="../static/css/boo-extension.css" rel="stylesheet">
+<link href="../static/css/boo.css" rel="stylesheet">
+<link href="../static/css/style.css" rel="stylesheet">
+<link href="../static/css/boo-coloring.css" rel="stylesheet">
+<link href="../static/css/boo-utility.css" rel="stylesheet">
 
-    </script>
-  </head>
-  <body>
-    <script src="../assets/js/bsa.js"></script>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="../static/plugins/selectivizr/selectivizr-min.js"></script>
+    <script src="../static/plugins/flot/excanvas.min.js"></script>
+<![endif]-->
 
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../feed" class="navbar-brand">Kwest</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="../static/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../static/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+
+<body class="sidebar-left ">
+<div class="page-container">
+        
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        
+                        <div class="search-global">
+                            <input id="globalSearch" class="search search-query input-medium" type="search">
+                            <a class="search-button" href="javascript:void(0);"><i class="fontello-icon-search-5"></i></a> </div>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav user-menu visible-desktop">
+                                <li><a class="btn-glyph fontello-icon-edit tip-bc" href="javascript:void(0);" title="Messages"><span class="badge badge-important">8</span></a></li>
+                                <li><a class="btn-glyph fontello-icon-mail-1 tip-bc" href="javascript:void(0);" title="Emails"></a></li>
+                                <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" title="Support"><span class="badge badge-important">4</span></a></li>
+                            </ul>
+                            <ul class="nav">
+                                <li class="active"> <a href="dashboard-one.html">Kwest</a> </li>
+                                <li> <a href="javascript:void(0);">Challenge Feed</a> </li>
+                                <li> <a href="component-fullcalendar-demo.html"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
+                                <li> <a href="javascript:void(0);"><span class="fontello-icon-users"></span>Profile</a> </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // navbar -->
+            
+           
+    
+    <!-- // header-container -->
+    
+    <div id="main-container">
+        
+            <!-- // sidebar item - profile -->
+            
+            
+     
+        <!-- // sidebar -->
+        
+        <div id="main-content" class="main-content container-fluid">
+            <div class="row-fluid page-head ">
+                <div class = "span8">
+                <h2 class="page-title"><i class="fontello-icon-monitor"></i> Challenge board</h2>
+                </div>
+                <div class="sidebar-item span4">
+                <div class="media profile">
+                    <div class="media-thumb media-left thumb-bordereb"> <a class="img-shadow" href="javascript:void(0);"><img class="thumb" src="../static/img/demo/demo-avatar9604.jpg"></a> </div>
+                    <div class="media-body">
+                        <h5 class="media-heading">Elvis Chan </h5>
+                        
+                        
+                        <p class="data">Level: 5 Xp: 300</p>
+                   
+                  
+                        
+                   
+               
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            <!-- // page head -->
+            
+            <div id="page-content" class="page-content">
+                
+                
+                <section>
+                    <div class="row-fluid">
+                        <div class="span8">
+                            <div class="widget widget-recent">
+                                <div class="widget-header">
+                                    <h4><i class="fontello-icon-article-alt-1"></i>Popular challenges</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="widget-body">
+                                        <ul class="widget-list">
+                                            <li class="media media-overflow">
+                                                <div class="media-right">
+                                                    <div class="quick-menu">
+                                                        <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <ul class="data inline">
+                                                        <li><i class="fontello-icon-feather"></i> By: <a href="#"><strong>John Doe</strong></a></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li><strong>2 Aug 2012</strong>, 09:27 AM</li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>IP: <strong>158.45.46.27</strong></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>updated: <strong>6:25 PM</strong> (5 hours ago)</li>
+                                                    </ul>
+                                                    <h4 class="media-heading"> <a href="javascript:void(0);">Aliquam facilisis enim et elit tincidunt Suspendisse</a></h4>
+                                                    <p class="data">Lorem ipsum dolor sit amet consectetuer Nunc porta Maecenas lorem semper. Mauris risus justo egest...</p>
+                                                </div>
+                                            </li>
+                                            <li class="media media-overflow">
+                                                <div class="media-right">
+                                                    <div class="quick-menu">
+                                                        <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <ul class="data inline">
+                                                        <li><i class="fontello-icon-feather"></i> By: <a href="#"><strong>John Doe</strong></a></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li><strong>2 Aug 2012</strong>, 09:27 AM</li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>IP: <strong>158.45.46.27</strong></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>updated: <strong>6:25 PM</strong> (5 hours ago)</li>
+                                                    </ul>
+                                                    <h4 class="media-heading"> <a href="javascript:void(0);">Lorem ipsum dolor sit amet consectetuer</a></h4>
+                                                    <p class="data">Lorem ipsum dolor sit amet consectetuer Nunc porta Maecenas lorem semper. Mauris risus justo egest Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Cras sit amet nibh libero, in gravida nulla.</p>
+                                                </div>
+                                            </li>
+                                            <li class="media media-overflow">
+                                                <div class="media-right">
+                                                    <div class="quick-menu">
+                                                        <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <ul class="data inline">
+                                                        <li><i class="fontello-icon-feather"></i> By: <a href="#"><strong>John Doe</strong></a></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li><strong>2 Aug 2012</strong>, 09:27 AM</li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>IP: <strong>158.45.46.27</strong></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>updated: <strong>6:25 PM</strong> (5 hours ago)</li>
+                                                    </ul>
+                                                    <h4 class="media-heading"> <a href="javascript:void(0);">Nunc porta Maecenas</a></h4>
+                                                    <p class="data">Lorem ipsum dolor sit amet consectetuer Nunc porta Maecenas lorem semper. Mauris risus justo egest...</p>
+                                                </div>
+                                            </li>
+                                            <li class="media media-overflow">
+                                                <div class="media-right">
+                                                    <div class="quick-menu">
+                                                        <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <ul class="data inline">
+                                                        <li><i class="fontello-icon-feather"></i> By: <a href="#"><strong>John Doe</strong></a></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li><strong>2 Aug 2012</strong>, 09:27 AM</li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>IP: <strong>158.45.46.27</strong></li>
+                                                        <li class="divider-vertical"></li>
+                                                        <li>updated: <strong>6:25 PM</strong> (5 hours ago)</li>
+                                                    </ul>
+                                                    <h4 class="media-heading"> <a href="javascript:void(0);">Elit tincidunt Suspendisse</a></h4>
+                                                    <p class="data">Lorem ipsum dolor sit amet consectetuer Nunc porta Maecenas lorem semper. Mauris risus justo egest Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Cras sit amet nibh libero.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // Widget --> 
+                        </div>
+                        <!-- // column -->
+                        
+                        <div class="span4">
+                            <div class="widget widget-simple">
+                                <div class="widget-header">
+                                    <h4><i class="fontello-icon-th-list-4"></i> Leaderboard</h4>
+                                </div>
+                                <!-- // widget header -->
+                                <div class="widget-content">
+                                    <div class="widget-body">
+                                        <div class="progress-group margin-00">
+                                            <div class="label-field">Raghav <span class="pull-right">536 challenges</span></div>
+                                            <div class="progress progress-success progress-mini filled3 margin-0s">
+                                                <div class="filler">
+                                                    <div class="bar" style="width:100%"> </div>
+                                                </div>
+                                            </div>
+                                            <!-- // progress 1 -->
+                                            
+                                            <div class="label-field">Karthik <span class="pull-right">359 challenges</span></div>
+                                            <div class="progress progress-success progress-mini filled3 margin-0s">
+                                                <div class="filler">
+                                                    <div class="bar" style="width:75%"> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // progress 2 -->
+                                        
+                                        <div class="label-field">Supraja <span class="pull-right">298 challenges</span></div>
+                                        <div class="progress progress-success progress-mini filled3 margin-0s">
+                                            <div class="filler">
+                                                <div class="bar" style="width:52%"> </div>
+                                            </div>
+                                        </div>
+                                        <!-- // progress 3 -->
+                                        
+                                        <div class="label-field">Vignesh <span class="pull-right">274 challenges</span></div>
+                                        <div class="progress progress-success progress-mini filled3 margin-0s">
+                                            <div class="filler">
+                                                <div class="bar" style="width:50%"> </div>
+                                            </div>
+                                        </div>
+                                        <!-- // progress 3 -->
+                                        
+                                        <div class="label-field">Leonard <span class="pull-right">214 challenges</span></div>
+                                        <div class="progress progress-success progress-mini filled3 margin-0s">
+                                            <div class="filler">
+                                                <div class="bar" style="width:46%"> </div>
+                                            </div>
+                                        </div>
+                                        <!-- // progress 3 -->
+                                        
+                                        <div class="label-field">Raj <span class="pull-right">196 challenges</span></div>
+                                        <div class="progress progress-success progress-mini filled3 margin-0s">
+                                            <div class="filler">
+                                                <div class="bar" style="width:38%"> </div>
+                                            </div>
+                                        </div>
+                                        <!-- // progress 3 --> 
+                                    </div>
+                                </div>
+                                <!-- // widget content --> 
+                            </div>
+                            <!-- // Widget --> 
+                        </div>
+                        <!-- // column --> 
+                    </div>
+                    <!-- // Example row --> 
+                    
+                </section>
+
+
+
+<div class="row-fluid">
+                    <section id="iconSet" class="span12 margin-bottom30 icoclass-hidden">
+
+
+<ul class="btn-icon-demo">
+                            
+                            
+                           
+                        </ul>
+                    </section>
+                </div>
+
+
+
+
+            </div>
+            <!-- // page content --> 
+            
         </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="../feed">Challenge Feed</a>
-            </li>            <li>
-              <a href="../challengeCreate">Create Challenge</a>
-            </li>
-            <li>
-              <a href="../profile">Profile</a>
-            </li>   
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="http://news.bootswatch.com">Sign out</a>
-            </li>
-          </ul> 
-        </div>
-      </div>
+        <!-- // main-content --> 
+        
     </div>
+    <!-- // main-container  -->
     
-    
-
-  
  
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">       
-            <p>Kwest Team</p?
-          </div>
-        </div>   
-      </footer>
-    </div>
+    
+</div>
+<!-- // page-container  --> 
 
+<!-- Le javascript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../static/js/lib/jquery.js"></script> 
+<script src="../static/js/lib/jquery-ui.js"></script>
+<script src="../static/js/lib/jquery.cookie.js"></script> 
+<script src="../static/js/lib/jquery.date.min.js"></script> 
+<script src="../static/js/lib/jquery.mousewheel.js"></script> 
+<script src="../static/js/lib/jquery.load-image.min.js"></script>
+<script src="../static/js/lib/bootstrap/bootstrap.js"></script> 
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/bootswatch.js"></script>
-  </body>
+<!-- Plugins Bootstrap -->
+<script src="../static/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.min.js"></script> 
+<script src="../static/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+<script src="../static/plugins/bootstrap-fuelux/js/all-fuelux.min.js"></script> 
+<script src="../static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> 
+<script src="../static/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script src="../static/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../static/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script src="../static/plugins/bootstrap-daterangepicker/js/bootstrap-daterangepicker.js"></script> 
+<script src="../static/plugins/bootstrap-toggle-button/js/bootstrap-toggle-button.js"></script> 
+<script src="../static/plugins/bootstrap-fileupload/js/bootstrap-fileupload.js"></script> 
+<script src="../static/plugins/bootstrap-rowlink/js/bootstrap-rowlink.js"></script> 
+<script src="../static/plugins/bootstrap-progressbar/js/bootstrap-progressbar.js"></script> 
+<script src="../static/plugins/bootstrap-select/bootstrap-select.js"></script> 
+<script src="../static/plugins/bootstrap-bootbox/bootbox.min.js"></script> 
+<script src="../static/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script> 
+<script src="../static/plugins/bootstrap-modal/js/bootstrap-modal.js"></script> 
+<script src="../static/plugins/bootstrap-wizard/js/bootstrap-wizard-combi.js"></script>
+<script src="../static/plugins/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js"></script>
+ 
+
+<!-- Plugins Custom - Only example --> 
+<script src="../static/plugins/pl-extension/google-code-prettify/prettify.js"></script>
+<!-- Plugins Custom - System --> 
+<script src="../static/plugins/pl-system/nicescroll/jquery.nicescroll.min.js"></script> 
+<script src="../static/plugins/pl-system/xbreadcrumbs/xbreadcrumbs.js"></script> 
+<!-- Plugins Custom - System info -->
+<script src="../static/plugins/pl-system-info/qtip2/dist/jquery.qtip.min.js"></script> 
+<script src="../static/plugins/pl-system-info/gritter/js/jquery.gritter.min.js"></script> 
+<script src="../static/plugins/pl-system-info/notyfy/jquery.notyfy.js"></script>
+<!-- Plugins Custom - Content -->
+<script src="../static/plugins/pl-content/list/js/list.min.js"></script> 
+<script src="../static/plugins/pl-content/list/plugins/list.paging.min.js"></script>
+<script src="../static/plugins/pl-content/jpages/js/jPages.js"></script> 
+<!-- Plugins Custom - Component -->
+<script src="../static/plugins/pl-component/fullcalendar/fullcalendar.min.js"></script> 
+<script src="../static/plugins/pl-component/rangeslider/jqallrangesliders.min.js"></script>
+<!-- Plugins Custom - Form -->
+<script src="../static/plugins/pl-form/uniform/jquery.uniform.min.js"></script> 
+<script src="../static/plugins/pl-form/select2/select2.min.js"></script>
+<script src="../static/plugins/pl-form/counter/jquery.counter.js"></script> 
+<script src="../static/plugins/pl-form/elastic/jquery.elastic.js"></script> 
+<script src="../static/plugins/pl-form/inputmask/jquery.inputmask.js"></script> 
+<script src="../static/plugins/pl-form/inputmask/jquery.inputmask.extensions.js"></script> 
+<script src="../static/plugins/pl-form/validate/js/jquery.validate.min.js"></script> 
+    <script src="../static/plugins/pl-form/duallistbox/jquery.dualListBox.min.js"></script>
+<!-- Plugins Custom - Gallery --> 
+<script src="../static/plugins/pl-gallery/nailthumb/jquery.nailthumb.1.1.min.js"></script> 
+<script src="../static/plugins/pl-gallery/nailthumb/showLoading/js/jquery.showLoading.min.js"></script>
+<script src="../static/plugins/pl-gallery/wookmark/jquery.imagesloaded.js"></script>
+<script src="../static/plugins/pl-gallery/wookmark/jquery.wookmark.min.js"></script>
+ 
+<!-- Plugins Tables --> 
+<script src="../static/plugins/pl-table/datatables/media/js/jquery.dataTables.js"></script> 
+<script src="../static/plugins/pl-table/datatables/plugin/jquery.dataTables.plugins.js"></script> 
+<script src="../static/plugins/pl-table/datatables/plugin/jquery.dataTables.columnFilter.js"></script> 
+
+<!-- Plugins data visualization --> 
+<script src="../static/plugins/pl-visualization/sparkline/jquery.sparkline.min.js"></script> 
+    
+    <script src="../static/plugins/pl-visualization/percentageloader/percentageloader.min.js"></script>
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.categories.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.grow.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.orderBars.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.pie.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.resize.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.selection.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.stack.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.stackpercent.js"></script> 
+<script src="../static/plugins/pl-visualization/flot/jquery.flot.time.js"></script> 
+
+<!-- main js --> 
+<script src="../static/js/core.js"></script> 
+<script src="../static/js/application.js"></script>   
+
+<!-- Only This Demo Page --> 
+<script src="../static/js/demo/demo-dashboard1.js"></script> 
+
+</body>
 </html>
