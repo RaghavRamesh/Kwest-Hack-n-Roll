@@ -1,22 +1,16 @@
-from retailserver import app
 from flask.ext.sqlalchemy import SQLAlchemy
-import time
-import views
 import datetime
-import math
-import constants
-import requests
-import simplejson
+from app import app
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C://Users//dell//Desktop//Kwest//test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C://Users//dell//Desktop//Kwest//test1.db'
 # app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
 class ChallengeComment(db.Model):
-	__tablename__=”ChallengeComment”
+	__tablename__="ChallengeComment"
 	postTime = db.Column(db.DateTime)
 	email = db.Column(db.String(50),db.ForeignKey('Users.email'))
-	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True))
+	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True)
 	commentid = db.Column(db.Integer, primary_key = True)
 	description = db.Column(db.Text)
 	
@@ -29,13 +23,13 @@ class ChallengeComment(db.Model):
 
 
 class Comments(db.Model):
-	__tablename__=”Comments”
+	__tablename__="Comments"
 	postTime = db.Column(db.DateTime)
 	email = db.Column(db.String(50),db.ForeignKey('Users.email'))
-	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True))
+	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True)
 	commentId = db.Column(db.Integer, primary_key = True)
 	description = db.Column(db.Text)
-	answerId - db.Column(db.Integer, db.ForeignKey('Answers.answerId'),primary_key = True)
+	answerId = db.Column(db.Integer, db.ForeignKey('Answers.answerId'),primary_key = True)
 
 def __init__(self,**kwargs):
 		self.postTime = kwargs.get('postTime', datetime.datetime.now())
@@ -47,7 +41,7 @@ def __init__(self,**kwargs):
 
 
 class Users(db.Model):
-	__tablename__=”Users”
+	__tablename__="Users"
 	email = db.Column(db.String(50), primary_key = True)
 	userName = db.Column(db.String(50))
 	userLevel = db.Column(db.Integer)
@@ -65,7 +59,7 @@ class Users(db.Model):
 
 
 class Answers(db.Model):
-	__tablename__=”Answers”
+	__tablename__="Answers"
 	status = db.Column(db.Boolean)
 	email = db.Column(db.String(50), db.ForeignKey('Users.email'))
 	challengeId = db.Column(db.String(50), db.ForeignKey('Challenges.challengeId'),  primary_key=True)
@@ -114,8 +108,8 @@ class Challenges(db.Model):
 
 class UserChallengeJoin(db.Model):
 	__tablename__ = 'UserChallengesJoin'
-	email = db.Column(db.String, primary_key = True, db.ForeignKey('Users.email'))
-	challengeId = db.Column(db.Integer, primary_key = True,db.ForeignKey('Challenges.challengeId'))
+	email = db.Column(db.String, db.ForeignKey('Users.email'), primary_key = True)
+	challengeId = db.Column(db.Integer,db.ForeignKey('Challenges.challengeId') , primary_key = True)
 	status = db.Column(db.String)
 
 	def __init__(self, **kwargs):

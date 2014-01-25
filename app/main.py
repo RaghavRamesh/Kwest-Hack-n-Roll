@@ -9,9 +9,6 @@ from challengeCreate import ChallengeCreate
 from shop import Shop
 from profile import Profile
 
-
-app = flask.Flask(__name__)
-
 # Routes
 app.add_url_rule('/login',
 	view_func=Login.as_view('login'),
