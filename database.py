@@ -111,3 +111,18 @@ class Challenges(db.Model):
 
 	def __repr__(self):
 		return '<challengeName: %r createdEmail: %r description: %r challengeLevel: %r' % (self.challengeName, self.description, self.createdEmail, self.challengeLevel)
+
+class UserChallengeJoin(db.Model):
+	__tablename__ = 'UserChallengesJoin'
+	email = db.Column(db.String, primary_key = True, db.ForeignKey('Users.email'))
+	challengeId = db.Column(db.Integer, primary_key = True,db.ForeignKey('Challenges.challengeId'))
+	status = db.Column(db.String)
+
+	def __init__(self, **kwargs):
+		self.email = kwargs.get('email')
+		self.challengeId = kwargs.get('challengeId')
+		self.status = kwargs.get('status','open')
+
+	def __repr__(self):
+		return '<email: %r challengeId: %r status: %r' % (self.email, self.challengeId, self.status)
+
