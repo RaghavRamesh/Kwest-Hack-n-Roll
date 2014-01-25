@@ -71,7 +71,7 @@
                                 <li class="active"> <a href="dashboard-one.html">Kwest</a> </li>
                                 <li> <a href="javascript:void(0);">Challenge Feed</a> </li>
                                 <li> <a href="component-fullcalendar-demo.html"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
-                                <li> <a href="javascript:void(0);"><span class="fontello-icon-users"></span>Profile</a> </li>
+                                <li> <a href="javascript:void(0);"><span class="fontello-icon-users"></span>{{ profileDict['name'] }}</a> </li>
                                 
                             </ul>
                         </div>
@@ -95,7 +95,7 @@
         <div id="main-content" class="main-content container-fluid">
             <div class="row-fluid page-head ">
                 <div class = "span8">
-                <h2 class="page-title"><i class="fontello-icon-monitor"></i> Profile </h2>
+                <h2 class="page-title"><i class="fontello-icon-monitor"></i> {{ profileDict['name'] }} </h2>
                 </div>
                 
                 
@@ -103,7 +103,7 @@
                 <div class="media profile">
                     <div class="media-thumb media-left thumb-bordereb"> <a class="img-shadow" href="javascript:void(0);"><img class="thumb" src="../static/img/demo/demo-avatar9604.jpg"></a> </div>
                     <div class="media-body">
-                        <h5 class="media-heading">Elvis Chan </h5>
+                        <h5 class="media-heading">{{ profileDict['name'] }} </h5>
                         
                         
                         <p class="data">Level: 5 Xp: 300</p>
