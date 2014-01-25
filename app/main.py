@@ -10,7 +10,7 @@ from challengeCreate import ChallengeCreate
 from shop import Shop
 from profile import Profile
 # Routes
-app.add_url_rule('/login',
+app.add_url_rule('/',
 	view_func=Login.as_view('login'),
 	methods=['GET', 'POST'])
 app.add_url_rule('/profile',
