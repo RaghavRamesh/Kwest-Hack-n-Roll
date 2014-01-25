@@ -7,7 +7,7 @@ class ChallengeCreate(flask.views.MethodView):
 		return flask.render_template('challengeCreate.html')
 
 	def post(self):
-		print("Entered")
+		print "createChallenge"
 		title= request.form['title']
 		details = request.form['details']
 		level = request.args.get['level']
