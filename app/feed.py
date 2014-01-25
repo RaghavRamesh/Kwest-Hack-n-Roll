@@ -2,4 +2,4 @@ import flask, flask.views
 
 class Feed(flask.views.MethodView):
 	def get(self):
-		return "This is the news feed"
+		return flask.render_template('feed.html')
