@@ -1,6 +1,6 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 import datetime
-from app import app
+import main.app
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C://Users//dell//Desktop//Kwest//test1.db'
 # app.config['SQLALCHEMY_ECHO'] = True
