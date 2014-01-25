@@ -10,9 +10,10 @@ class ChallengeCreate(flask.views.MethodView):
 		print("Entered")
 		title= request.form['title']
 		details = request.form['details']
-		endTime = datetime.date.today()+5 
 		level = request.args.get['level']
-		chl = Challenges(challengeName = title, description = details, challengeLevel = "level", createdTime = datetime.date.today(), startTime = datetime.date.today(), endTime = datetime.date.today() + 5)
+		startTime = datetime.date.today()
+		endTime = datetime.date.today()+5 
+		chl = Challenges(challengeName = title, description = details, challengeLevel = "level", createdTime = startTime, startTime = startTime, endTime = endTime)
 		db.session.add(chl)
 		db.session.commit()
 		message = "Challenge created successfully!"
