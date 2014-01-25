@@ -2,7 +2,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import datetime
 from app import app
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C://Users//dell//Desktop//Kwest//test1.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///..//test1.db'
 # app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
@@ -57,6 +57,8 @@ class Users(db.Model):
 		self.experience = kwargs.get('experience',0)
 		self.money = kwargs.get('money',0)
 
+	def loginCheck(self,mail,pas):
+		return db.session.query(Users).filter_by(email = mail, password=pas).count()
 
 class Answers(db.Model):
 	__tablename__="Answers"
