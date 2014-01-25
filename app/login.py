@@ -10,7 +10,7 @@ class Login(flask.views.MethodView):
 		self.profile = Profile()
 
 	def get(self):
-		if(session['email']):
+		if 'email' in session:
 			return self.profile.get()
 		else:
 			return flask.render_template('login.html')

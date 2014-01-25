@@ -14,7 +14,7 @@ from profile import Profile
 app.add_url_rule('/logout',
 	view_func=Logout.as_view('logout'),
 	methods=['GET'])
-app.add_url_rule('/login',
+app.add_url_rule('/',
 	view_func=Login.as_view('login'),
 	methods=['GET', 'POST'])
 app.add_url_rule('/profile',
