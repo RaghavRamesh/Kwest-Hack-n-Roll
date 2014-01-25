@@ -1,6 +1,6 @@
 import flask, flask.views
 from flask import request, url_for
-from Kwest import Challenges
+
 from datetime import datetime
 
 class ChallengeCreate(flask.views.MethodView):
