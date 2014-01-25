@@ -29,4 +29,5 @@ app.add_url_rule('/shop',
 	view_func=Shop.as_view('shop'),
 	methods=['GET', 'POST'])
 
-app.run(debug = True)
+app.debug = True
+app.run('0.0.0.0', 8000)
