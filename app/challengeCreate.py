@@ -1,6 +1,7 @@
 import flask, flask.views
 from flask import request, url_for
-from datetime import datetime
+import datetime
+import database
 
 class ChallengeCreate(flask.views.MethodView):
 	def get(self):
@@ -8,12 +9,15 @@ class ChallengeCreate(flask.views.MethodView):
 
 	def post(self):
 		print "createChallenge"
+
 		title= request.form['title']
 		details = request.form['details']
-		level = request.args.get['level']
+		level = request.form['level']
 		startTime = datetime.date.today()
-		endTime = datetime.date.today()+5 
-		chl = Challenges(challengeName = title, description = details, challengeLevel = "level", createdTime = startTime, startTime = startTime, endTime = endTime)
+		endTime = datetime.date.today() + datetime.timedelta(days=5)
+		print "comes here"
+		chl = database.Challenges(challengeName = title, description = details, challengeLevel = "level", createdTime = startTime, startTime = startTime, endTime = endTime)
+		print chl
 		db.session.add(chl)
 		db.session.commit()
 		message = "Challenge created successfully!"
