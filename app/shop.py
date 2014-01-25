@@ -2,4 +2,4 @@ import flask, flask.views
 
 class Shop(flask.views.MethodView):
 	def get(self):
-		return "Shop!!!"
+		return flask.render_template('shop.html')
