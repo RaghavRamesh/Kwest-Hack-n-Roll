@@ -1,4 +1,5 @@
 import flask, flask.views
+from flask import session
 # from database import *
 
 class Profile(flask.views.MethodView):
@@ -10,6 +11,8 @@ class Profile(flask.views.MethodView):
 		# while (there are tuples):
 		# 	pending.title		
 		# 	pending.timeLeft
+		print session['email']
+		
 		return flask.render_template('profile.html')
 
 
