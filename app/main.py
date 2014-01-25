@@ -9,6 +9,8 @@ from challengeCreate import ChallengeCreate
 from shop import Shop
 from profile import Profile
 
+app = flask.Flask(__name__)
+
 # Routes
 app.add_url_rule('/login',
 	view_func=Login.as_view('login'),
@@ -28,6 +30,3 @@ app.add_url_rule('/challengeCreate',
 app.add_url_rule('/shop',
 	view_func=Shop.as_view('shop'),
 	methods=['GET', 'POST'])
-
-app.debug = True
-app.run('0.0.0.0', 8000)
