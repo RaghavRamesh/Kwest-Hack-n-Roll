@@ -10,7 +10,7 @@ class ChallengeComment(db.Model):
 	__tablename__="ChallengeComment"
 	postTime = db.Column(db.DateTime)
 	email = db.Column(db.String(50),db.ForeignKey('Users.email'))
-	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True)
+	challengeId = db.Column(db.String, db.ForeignKey('Challenges.challengeId'),primary_key = True)
 	commentid = db.Column(db.Integer, primary_key = True)
 	description = db.Column(db.Text)
 	
@@ -26,7 +26,7 @@ class Comments(db.Model):
 	__tablename__="Comments"
 	postTime = db.Column(db.DateTime)
 	email = db.Column(db.String(50),db.ForeignKey('Users.email'))
-	challengeId = db.Column(db.Integer, db.ForeignKey('Challenges.challengeId'),primary_key = True)
+	challengeId = db.Column(db.String, db.ForeignKey('Challenges.challengeId'),primary_key = True)
 	commentId = db.Column(db.Integer, primary_key = True)
 	description = db.Column(db.Text)
 	answerId = db.Column(db.Integer, db.ForeignKey('Answers.answerId'),primary_key = True)
@@ -83,7 +83,7 @@ class Answers(db.Model):
 
 class Challenges(db.Model):
 	__tablename__="Challenges"
-	challengeId=db.Column(db.Integer, primary_key = True)
+	challengeId=db.Column(db.String, primary_key = True)
 	challengeName = db.Column(db.String(50))
 	createdEmail=db.Column(db.String(50), unique = True)
 	description = db.Column(db.String(200))
@@ -111,7 +111,7 @@ class Challenges(db.Model):
 class UserChallengeJoin(db.Model):
 	__tablename__ = 'UserChallengesJoin'
 	email = db.Column(db.String, db.ForeignKey('Users.email'), primary_key = True)
-	challengeId = db.Column(db.Integer,db.ForeignKey('Challenges.challengeId') , primary_key = True)
+	challengeId = db.Column(db.String,db.ForeignKey('Challenges.challengeId') , primary_key = True)
 	status = db.Column(db.String)
 
 	def __init__(self, **kwargs):

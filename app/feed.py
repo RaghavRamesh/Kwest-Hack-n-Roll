@@ -70,7 +70,8 @@ class Feed(flask.views.MethodView):
 			level= eachChallenge.challengeLevel 
 			votes = eachChallenge.votes
 			endTime = eachChallenge.endTime
-			acceptedNumber = database.UserChallengeJoin.query.filter_by(challengeId=eachChallenge.challengeId, status='accepted').count()
+			print eachChallenge.challengeId
+			acceptedNumber = database.UserChallengeJoin.query.filter_by(challengeId=eachChallenge.challengeId.str(), status='accepted').count()
 			nameList.append(name)
 			levelList.append(level)
 			votesList.append(votes)
