@@ -9,6 +9,7 @@ from feed import Feed
 from challengeInfo import ChallengeInfo
 from challengeCreate import ChallengeCreate
 from shop import Shop
+from accept import Accept
 from profile import Profile
 # Routes
 app.add_url_rule('/logout',
@@ -31,4 +32,7 @@ app.add_url_rule('/challengeCreate',
 	methods=['GET', 'POST'])
 app.add_url_rule('/shop',
 	view_func=Shop.as_view('shop'),
+	methods=['GET', 'POST'])
+app.add_url_rule('/accepted/<int:id>',
+	view_func=Accept.as_view('accept'),
 	methods=['GET', 'POST'])
