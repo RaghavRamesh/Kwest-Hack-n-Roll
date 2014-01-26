@@ -23,7 +23,7 @@ app.add_url_rule('/profile',
 app.add_url_rule('/feed',
 	view_func=Feed.as_view('feed'),
 	methods=['GET', 'POST'])
-app.add_url_rule('/challengeInfo',
+app.add_url_rule('/challengeInfo/<int:challengeId>',
 	view_func=ChallengeInfo.as_view('challengeInfo'),
 	methods=['GET', 'POST'])
 app.add_url_rule('/challengeCreate',

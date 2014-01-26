@@ -60,10 +60,10 @@
                   <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" title="Support"><span class="badge badge-important">4</span></a></li>
                 </ul>
                 <ul class="nav">
-                  <li class="active"> <a href="dashboard-one.html">Kwest</a> </li>
-                  <li> <a href="javascript:void(0);">Challenge Feed</a> </li>
-                  <li> <a href="component-fullcalendar-demo.html"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
-                  <li> <a href="javascript:void(0);"><span class="fontello-icon-users"></span>Profile</a> </li>
+                  <li class="active"> <a href="/feed">Kwest</a> </li>
+                  <li> <a href="/feed">Challenge Feed</a> </li>
+                  <li> <a href="/challengeCreate"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
+                  <li> <a href="/profile"><span class="fontello-icon-users"></span>Profile</a> </li>
 
                 </ul>
               </div>
@@ -127,6 +127,9 @@
                               <div class="media-right">
                                 <div class="quick-menu">
                                   <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                    <a class="btn btn-mini btn-success" href="javascript:void(0);">Up vote</a> 
+                                    <a class="btn btn-mini btn-success" href="javascript:void(0);">Down vote</a> 
+
                                   </div>
                                 </div>
                               </div>
@@ -134,7 +137,7 @@
                                 <ul class="data inline">
 
                                   
-                                  <h4 class="media-heading"> <a href="javascript:void(0);">{{individual['name']}}</a></h4>
+                                  <h4 class="media-heading"> <a href="/challengeInfo/{{ individual['challengeId'] }}">{{individual['name']}}</a></h4>
                                   <p class="data">{{individual['description']}}</p>
                                   <li><i class="fontello-icon-feather"></i> By: <a href="#"><strong>{{individual['username']}}</strong></a></li>
                                   <li class="divider-vertical"></li>

@@ -1,6 +1,5 @@
 import flask, flask.views
 from flask import request,session
-import requests
 from database import Users
 from profile import Profile
 
