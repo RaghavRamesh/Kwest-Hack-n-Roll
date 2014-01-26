@@ -67,7 +67,6 @@ class Profile(flask.views.MethodView):
 
 
 	def post(self):
-
 		return flask.render_template('profile.html')
 	
 
