@@ -5,22 +5,24 @@ from flask import request
 
 class ChallengeInfo(flask.views.MethodView):
 	def get(self,challengeId):
-		basic = self.getBasic()
-		cmts = self.getComments()
-		ans = self.getAnswers()
+		basic = self.getBasic(challengeId)
+		cmts = self.getComments(challengeId)
+		ans = self.getAnswers(challengeId)
 		challengeDict = dict()
 		challengeDict.update( {'basic': basic, 'cmts':cmts, 'ans':ans } )
-		print challengeDict
+		challengeId = challengeId
+		# print challengeDict
 	
-		for r in challengeDict['basic']:
-			print r.description
+		# for r in challengeDict['basic']:
+		# 	print r.description
+		# print basic
 
 		return flask.render_template('challengeInfo.html', challengeDict=challengeDict)
 
-	def acceptChallenge(self):
+	def acceptChallenge(self, challengeId):
 		print "acceptChallenge"
 		email = request.args.get('username')
-		chl = UserChallengeJoin(challengeId = self.challengeId, email = email, status = 'accepted')
+		chl = UserChallengeJoin(challengeId = challengeId, email = email, status = 'accepted')
 		db.session.add(chl)
 		db.session.commit()
 		message = "You have accepted this challenge"
@@ -31,11 +33,11 @@ class ChallengeInfo(flask.views.MethodView):
 	def downvoteChallenge(self):
 		print "downvoteChallenge"
 
-	def commentChallenge(self):
+	def commentChallenge(self, challengeId):
 		desc = request.form['description']
 		postTime = datetime.datetime.now()
 		email = session['email']
-		challengeId = request.args.get('id')
+
 		commentChallenge = database.commentChallenge(description = desc, postTime = postTime, email = email, challengeId = challengeId)
 		db.session.add(chl)
 		db.session.commit()
@@ -45,17 +47,17 @@ class ChallengeInfo(flask.views.MethodView):
 	def uploadAnswer(self):
 		print "uploadAnswer"
 
-	def getBasic(self):
-		resultSet = database.Challenges.query.filter(database.Challenges.challengeId == request.args.get('id')).all()
+	def getBasic(self, challengeId):
+		resultSet = database.Challenges.query.filter(database.Challenges.challengeId == challengeId).all()
 		return resultSet
 
-	def getComments(self):
-		resultSet = database.ChallengeComment.query.filter(database.ChallengeComment.challengeId == request.args.get('id')).all()
+	def getComments(self, challengeId):
+		resultSet = database.ChallengeComment.query.filter(database.ChallengeComment.challengeId == challengeId).all()
 		return resultSet
 
-	def getAnswers(self):
-		resultSet = database.Answers.query.filter(database.Answers.challengeId == request.args.get('id')).all()
+	def getAnswers(self, challengeId):
+		resultSet = database.Answers.query.filter(database.Answers.challengeId == challengeId).all()
 		return resultSet
 
-	def getOwner(self):
+	def getOwner(self, challengeId):
 		user = database.Challenges.query.get(database.Challenges.challengeId == request.args.get('id'))
