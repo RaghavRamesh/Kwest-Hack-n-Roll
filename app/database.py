@@ -85,7 +85,7 @@ class Challenges(db.Model):
 	__tablename__="Challenges"
 	challengeId=db.Column(db.String, primary_key = True)
 	challengeName = db.Column(db.String(50))
-	createdEmail=db.Column(db.String(50), unique = True)
+	createdEmail=db.Column(db.String(50))
 	description = db.Column(db.String(200))
 	challengeLevel = db.Column(db.Integer)
 	createdTime = db.Column(db.DateTime)
@@ -103,7 +103,7 @@ class Challenges(db.Model):
 		self.startTime=kwargs.get('startTime')
 		self.endTime=kwargs.get('endTime')
 		self.votes=kwargs.get('votes', 0)
-		self.adjust_price()
+		
 
 	def __repr__(self):
 		return '<challengeName: %r createdEmail: %r description: %r challengeLevel: %r' % (self.challengeName, self.description, self.createdEmail, self.challengeLevel)

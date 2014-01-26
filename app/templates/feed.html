@@ -126,7 +126,8 @@
                             <li class="media media-overflow">
                               <div class="media-right">
                                 <div class="quick-menu">
-                                  <div class="btn-group"> <a class="btn btn-mini btn-success" href="javascript:void(0);">Accept</a> 
+                                  <div class="btn-group "> <a class="btn btn-mini btn-success" href="accepted/1">Accept</a> 
+                                    <!--button type="button" class="btn btn-mini btn-success" onclick="proceed();">Accept</button--> 
                                     <a class="btn btn-mini btn-success" href="javascript:void(0);">Up vote</a> 
                                     <a class="btn btn-mini btn-success" href="javascript:void(0);">Down vote</a> 
 
@@ -352,6 +353,19 @@
 
       <!-- Only This Demo Page --> 
       <script src="../static/js/demo/demo-dashboard1.js"></script> 
+      <script type="text/javascript">
+      $( document ).ready(function() {
+  function proceed () {
+    alert("hi")
+    /*var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', 'http://google.com');
+    form.style.display = 'hidden';
+    document.body.appendChild(form)
+    form.submit();*/
+}
+});
+      </script>
 
     </body>
     </html>

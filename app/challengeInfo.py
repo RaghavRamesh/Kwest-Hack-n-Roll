@@ -28,10 +28,15 @@ class ChallengeInfo(flask.views.MethodView):
 		message = "You have accepted this challenge"
 
 	def upvoteChallenge(self):
-		print "upvoteChallenge"
+		challenge = Challenges.query.get(challengeId = self.challengeId)
+		challenge.votes = challenge.votes + 1
+		db.session.commit()
+
 
 	def downvoteChallenge(self):
-		print "downvoteChallenge"
+		challenge = Challenges.query.get(challengeId = self.challengeId)
+		challenge.votes = challenge.votes - 1
+		db.session.commit()
 
 	def commentChallenge(self, challengeId):
 		desc = request.form['description']
