@@ -11,9 +11,9 @@ class ChallengeInfo(flask.views.MethodView):
 		challengeDict = dict()
 		challengeDict.update( {'basic': basic, 'cmts':cmts, 'ans':ans } )
 		print challengeDict
-		result = database.Challenges.query.all()
-		for r in result:
-			print r['description']
+	
+		for r in challengeDict['basic']:
+			print r.description
 
 		return flask.render_template('challengeInfo.html', challengeDict=challengeDict)
 
