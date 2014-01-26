@@ -3,21 +3,17 @@ import datetime
 
 class ChallengeInfo(flask.views.MethodView):
 	def get(self):
-
-		return flask.render_template('challengeInfo.html')
+		basic = self.getBasic()
+		cmts = self.getComments()
+		ans = self.getAnswers()
+		challengeDict = dict()
+		challengeDict.update( {'basic': basic, 'cmts':cmts, 'ans':ans}
+		return flask.render_template('challengeInfo.html', challengeDict= challengeDict)
 
 	def acceptChallenge(self):
 		print "acceptChallenge"
-		id = request.args.get('id')
-		name = request.args.get('name')
 		email = request.args.get('username')
-		description = request.args.get('description')
-		level = request.args.get('level')
-		createdTime = request.args.get('createdTime')
-		startTime = request.args.get('startTime')
-		endTime = request.args.get('endTime')
-		votes = request.args.get('votes')
-		chl = Challenges(challengeId = id, challengeName = name, createdEmail = email, startTime = startTime, createdTime = createdTime, endTime = endTime, votes = votes)
+		chl = UserChallengeJoin(challengeId = self.challengeId,email = email, status =  )
 		db.session.add(chl)
 		db.session.commit()
 		message = "You have accepted this challenge"
@@ -33,3 +29,17 @@ class ChallengeInfo(flask.views.MethodView):
 
 	def uploadAnswer(self):
 		print "uploadAnswer"
+
+	def getBasic(self):
+		resultSet = Challenges.query.filter(Challenges.challengeId== self.challengeId)
+		return resultSet
+
+	def getComments(self):
+		resultSet = ChallengeComment.query.filter(ChallengeComment.challengeId = self.challengeId)
+		return resultSet
+
+	def getAnswers(self):
+		resultSet = Answers.query.filter(Answers.challengeId = self.challengeId)
+		return resultSet
+	def getOwner(self):
+		user = Challenges.query.get(Challenges.challengeId== self.challengeId )
