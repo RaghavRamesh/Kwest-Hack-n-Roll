@@ -11,6 +11,10 @@ class ChallengeInfo(flask.views.MethodView):
 		challengeDict = dict()
 		challengeDict.update( {'basic': basic, 'cmts':cmts, 'ans':ans } )
 		print challengeDict
+		result = database.Challenges.query.all()
+		for r in result:
+			print r['description']
+
 		return flask.render_template('challengeInfo.html', challengeDict=challengeDict)
 
 	def acceptChallenge(self):
@@ -28,7 +32,15 @@ class ChallengeInfo(flask.views.MethodView):
 		print "downvoteChallenge"
 
 	def commentChallenge(self):
-		print "commentChallenge"
+		desc = request.form['description']
+		postTime = datetime.datetime.now()
+		email = session['email']
+		challengeId = request.args.get('id')
+		commentChallenge = database.commentChallenge(description = desc, postTime = postTime, email = email, challengeId = challengeId)
+		db.session.add(chl)
+		db.session.commit()
+		message = "comment posted successfully!"
+		return flask.render_template('challengInfo.html')
 
 	def uploadAnswer(self):
 		print "uploadAnswer"
