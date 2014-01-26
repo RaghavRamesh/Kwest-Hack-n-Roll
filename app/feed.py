@@ -37,7 +37,8 @@ class Feed(flask.views.MethodView):
 								'mail':mail,
 								'description':description,
 								'username': username,
-								'acceptedNumber':acceptedNumber
+								'acceptedNumber':acceptedNumber,
+								'challengeId':eachChallenge.challengeId
 				})
 			# nameList.append(name)
 			# levelList.append(level)

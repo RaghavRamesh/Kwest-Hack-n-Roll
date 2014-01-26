@@ -4,7 +4,7 @@ import database
 from flask import request
 
 class ChallengeInfo(flask.views.MethodView):
-	def get(self):
+	def get(self,challengeId):
 		basic = self.getBasic()
 		cmts = self.getComments()
 		ans = self.getAnswers()
