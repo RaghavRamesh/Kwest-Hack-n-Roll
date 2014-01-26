@@ -119,7 +119,7 @@
                         <div class = "span8"> 
                             <div class="widget widget-simple ">
                                 <div class="widget-header">
-                                    <h4><i class="fontello-icon-edit"></i> Title</h4>
+                                    <h4><i class="fontello-icon-edit"></i> hi {{challengeDict.basic.title}}</h4>
                                     <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" href="javascript:void(0);"> Add comment</a></div>
                                 </div>
                                 <div class="widget-content">
@@ -128,7 +128,7 @@
                                         <form id="formNotes" class="form-dark">
                                             <fieldset>
                                                 
-                                                <label for="accountNotes">Description</label>
+                                                <label for="accountNotes">{{challengeDict.basic.description}}</label>
                                                 <textarea id="accountNotes" class="input-block-level" rows="4"></textarea>
                                             </fieldset>
                                             <!-- // fieldset Input -->
@@ -142,22 +142,15 @@
                                 <div class="widget-content">
                                     <div class="widget-body">
                                         <ol class="widget-list list-dotted">
+                                        {% for c in challengeDict.ans %}
                                             <li class="media"> <span class="pull-left"><span class="item-icon fontello-icon-pin-1"></span></span>
                                                 <div class="media-body"> <span class="date">10:30 AM</span> <span class="quick-menu-icon pull-right"> <a class="edit fontello-icon-edit"></a> <a class="state fontello-icon-archive"></a> <a class="state fontello-icon-trash-1"></a> </span>
-                                                    <p class="note">Pellentesque malesuada nulla nunc nunc facilisi Donec tellus nec Donec et. Pellentesque metus dolor neque consequat scelerisque.</p>
+                                                    <p class="note">{{c.description}}</p>
                                                 </div>
                                             </li>
-                                            <li class="media"> <span class="pull-left"><span class="item-icon fontello-icon-pin-1"></span></span>
-                                                <div class="media-body"> <span class="date">09-09-2012 02:30 PM</span> <span class="quick-menu-icon pull-right"> <a class="edit fontello-icon-edit"></a> <a class="state fontello-icon-archive"></a> <a class="state fontello-icon-trash-1"></a> </span>
-                                                    <p class="note">Pellentesque malesuada nulla nunc nunc facilisi Donec tellus nec Donec et. Pellentesque metus dolor neque consequat scelerisque.</p>
-                                                </div>
-                                            </li>
-                                            <li class="media"> <span class="pull-left"><span class="item-icon fontello-icon-pin-1"></span></span>
-                                                <div class="media-body"> <span class="date">08-15-2012 11:50 AM</span> <span class="quick-menu-icon pull-right"> <a class="edit fontello-icon-edit"></a> <a class="state fontello-icon-archive"></a> <a class="state fontello-icon-trash-1"></a> </span>
-                                                    <p class="note">Pellentesque malesuada nulla nunc nunc facilisi Donec tellus nec Donec et. Pellentesque metus dolor neque consequat scelerisque.</p>
-                                                </div>
-                                            </li>
+                                        {% endfor %}    
                                         </ol>
+
                                     </div>
                                 </div>
                                  <div class="widget-header">
@@ -165,7 +158,18 @@
                                 </div>
                                 <div class="widget-content">
                                     <div class="widget-body">
-                                        <ol class="widget-list list-dotted">
+
+                                    <ol class="widget-list list-dotted">
+                                    {% for c in challengeDict.cmts %}
+                                            <li class="media"> <span class="pull-left"><span class="item-icon fontello-icon-pin-1"></span></span>
+                                                <div class="media-body"> <span class="date">10:30 AM</span> <span class="quick-menu-icon pull-right"> <a class="edit fontello-icon-edit"></a> <a class="state fontello-icon-archive"></a> <a class="state fontello-icon-trash-1"></a> </span>
+                                                    <p class="note"> {{ c.description}}</p>
+                                                </div>
+                                            </li>
+                                            
+                                    {% endfor %}                
+                                        </ol>
+                                        <!--ol class="widget-list list-dotted">
                                             <li class="media"> <span class="pull-left"><span class="item-icon fontello-icon-pin-1"></span></span>
                                                 <div class="media-body"> <span class="date">10:30 AM</span> <span class="quick-menu-icon pull-right"> <a class="edit fontello-icon-edit"></a> <a class="state fontello-icon-archive"></a> <a class="state fontello-icon-trash-1"></a> </span>
                                                     <p class="note">Pellentesque malesuada nulla nunc nunc facilisi Donec tellus nec Donec et. Pellentesque metus dolor neque consequat scelerisque.</p>
@@ -181,7 +185,7 @@
                                                     <p class="note">Pellentesque malesuada nulla nunc nunc facilisi Donec tellus nec Donec et. Pellentesque metus dolor neque consequat scelerisque.</p>
                                                 </div>
                                             </li>
-                                        </ol>
+                                        </ol-->
                                     </div>
                                 </div>
                             </div>

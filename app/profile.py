@@ -1,4 +1,5 @@
 import flask, flask.views
+from flask import session
 # from database import *
 from app import database
 
@@ -27,7 +28,7 @@ class Profile(flask.views.MethodView):
 				if check.status=='accepted':
 					accepted+=1
 					todo.append(check.challengeId)
-		userStat = database.Users.query.get(session['index'])
+		userStat = database.Users.query.get(session['email'])
 		name = userStat.userName
 		level = userStat.userLevel
 		xp = userStat.experience
@@ -46,9 +47,9 @@ class Profile(flask.views.MethodView):
 		#won- challenge id = sub query  and answer.status = 1
 		checkAnswers = database.Answers.query.all()
 		for ans in checkAnswers:
-			if (ans.challengeId in to_do and ans.status == True):
+			if (ans.challengeId in to_do) and (ans.status == True):
 				won+=1
-		profileDict=dict()
+		profileDict = dict()
 		profileDict.update( {'name': name,  
 							'level':level, 
 							'xp':xp,
@@ -57,7 +58,7 @@ class Profile(flask.views.MethodView):
 							'to_do': to_do,
 							'pending_title': pending_title,
 							'pending_timeLeft': pending_timeLeft,
-							'created': created,
+							'created': counter,
 							'accepted': accepted,
 							'completed':won	} )
 
@@ -65,5 +66,6 @@ class Profile(flask.views.MethodView):
 
 
 	def post(self):
+		print profileDict['name']
+		return flask.render_template('profile.html', profileDict=profileDict)
 
-		return flask.render_template('profile.html')

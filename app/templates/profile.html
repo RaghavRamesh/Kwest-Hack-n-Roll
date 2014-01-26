@@ -17,6 +17,13 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{{ url_for('logout') }}">Sign out</a>
+            </li>
+          </ul> 
+
 <!-- Le styles -->
 <link href="../static/css/lib/bootstrap.css" rel="stylesheet">
 <link href="../static/css/lib/bootstrap-responsive.css" rel="stylesheet">
@@ -25,6 +32,7 @@
 <link href="../static/css/style.css" rel="stylesheet">
 <link href="../static/css/boo-coloring.css" rel="stylesheet">
 <link href="../static/css/boo-utility.css" rel="stylesheet">
+
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -60,10 +68,10 @@
                                 <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" title="Support"><span class="badge badge-important">4</span></a></li>
                             </ul>
                             <ul class="nav">
-                                <li class="active"> <a href="dashboard-one.html">Kwest</a> </li>
-                                <li> <a href="javascript:void(0);">Challenge Feed</a> </li>
-                                <li> <a href="component-fullcalendar-demo.html"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
-                                <li> <a href="javascript:void(0);"><span class="fontello-icon-users"></span>Profile</a> </li>
+                                <li class="active"> <a href="/profile">Kwest</a> </li>
+                                <li> <a href="/feed">Challenge Feed</a> </li>
+                                <li> <a href="/challengeCreate"><span class="fontello-icon-calendar"></span>Create Challenge</a> </li>
+                                <li> <a href="/profile"><span class="fontello-icon-users"></span>{{ profileDict['name'] }}</a> </li>
                                 
                             </ul>
                         </div>
@@ -87,7 +95,7 @@
         <div id="main-content" class="main-content container-fluid">
             <div class="row-fluid page-head ">
                 <div class = "span8">
-                <h2 class="page-title"><i class="fontello-icon-monitor"></i> Profile </h2>
+                <h2 class="page-title"><i class="fontello-icon-monitor"></i> {{ profileDict['name'] }} </h2>
                 </div>
                 
                 
@@ -95,10 +103,10 @@
                 <div class="media profile">
                     <div class="media-thumb media-left thumb-bordereb"> <a class="img-shadow" href="javascript:void(0);"><img class="thumb" src="../static/img/demo/demo-avatar9604.jpg"></a> </div>
                     <div class="media-body">
-                        <h5 class="media-heading">Elvis Chan </h5>
+                        <h5 class="media-heading">{{ profileDict['name'] }} </h5>
                         
                         
-                        <p class="data">Level: 5 Xp: 300</p>
+                        <p class="data">Level: {{ profileDict['level'] }} Xp: {{ profileDict['xp'] }}</p>
                    
                   
                         
@@ -124,7 +132,7 @@
                                     <h6><i class="fontello-icon-back-in-time" align = "center"></i> Challenges posted</h6>
                                 </div>
                                 <div class="section-content" align = "center" >
-                                    <h2 class="statistic-values">20</h2>
+                                    <h2 class="statistic-values">{{ profileDict['created'] }}</h2>
                                 </div>
                             </div>
                             <div class="statistic-box well well-black span4">
@@ -132,7 +140,7 @@
                                     <h6><i class="fontello-icon-back-in-time"></i> Challenges Accepted</h6>
                                 </div>
                                 <div class="section-content" align = "center">
-                                    <h2 class="statistic-values">30</h2>
+                                    <h2 class="statistic-values">{{ profileDict['accepted'] }}</h2>
                                 </div>
                             </div>
                             <div class="statistic-box well well-black span4">
@@ -140,7 +148,7 @@
                                     <h6><i class="fontello-icon-back-in-time"></i> Challenges Completed</h6>
                                 </div>
                                 <div class="section-content" align = "center">
-                                    <h2 class="statistic-values">25</h2>
+                                    <h2 class="statistic-values">{{ profileDict['completed'] }}</h2>
                                 </div>
                             </div>
           
