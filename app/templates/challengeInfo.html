@@ -120,7 +120,8 @@
                             <div class="widget widget-simple ">
                                 <div class="widget-header">
                                     <h4><i class="fontello-icon-edit"></i> hi {{challengeDict.basic.title}}</h4>
-                                    <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" href="javascript:void(0);"> Add comment</a></div>
+                                    <div class="widget-tool"><a href="#defaultModal" class="btn btn-green btn-small btn-glyph" data-toggle="modal" > Add comment</a></div>
+                                    
                                 </div>
                                 <div class="widget-content">
                                     <div class="widget-body">
@@ -320,6 +321,77 @@
  
     
 </div>
+<div id="defaultModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fontello-icon-cancel-1"></i></button>
+            <h4 id="myModalLabel"><i class="fontello-icon-popup"></i> Comment</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row-fluid">
+                        <div class="span12">
+                            <div class="widget widget-simple">
+                                
+                                <div class="widget-content">
+                                    <div class="widget-body">
+                                        <form id="accounForm" class="form-horizontal" method="POST" action="comment/" >
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <div class="control-group no-margin-bootom">
+
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="form-dark">
+                                                    <fieldset>
+                                                        <ul class="form-list label-left list-bordered dotted">
+                                                            
+                                                            <!-- // section form divider -->
+                                                            
+                                                            
+                                                            <!-- // form item -->
+                                                            
+                                                            <li class="control-group">
+                                                                <label >Description </label>
+                                                          
+                                                                    <textarea id="accountFirstName" class="span12" type="text" name="accountFirstName" value= ""></textarea>
+                                                            </li>
+                                                            <!-- // form item -->
+                                                            
+                                                            
+                                                            <!-- // form item -->
+                                                            
+                                                            
+                                                            <!-- // form item -->
+                                                            
+                                                            
+                                                            
+                                                        </ul>
+                                                           
+                                                           
+                                                        <button type="submit" class="btn btn-blue span3">Submit</button>
+                                                         <button class="btn cancel span3">Cancel</button>
+                                                                                          
+                                                    </fieldset>
+                                                    <!-- // fieldset Input -->
+                                                   
+                                                        
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                             
+                        </div>
+                        <!-- // Column -->
+                        
+                    </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
 <!-- // page-container  --> 
 
 <!-- Le javascript --> 
