@@ -46,7 +46,6 @@ class Feed(flask.views.MethodView):
 			# mailList.append(mail)
 			# acceptedNumberList.append(acceptedNumber)
 			indiList.append(individual)
-			print indiList
 		# chalDict=dict()
 		# chalDict.update({'names':nameList,
 		# 				'levels':levelList,

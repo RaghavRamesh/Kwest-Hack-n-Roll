@@ -159,7 +159,7 @@
         </div>
         <h2 id="progress-animated">For next level</h2>
            <div class="progress progress-striped active span8">
-                                        <div class="bar" style="width:75%"> </div>
+                                        <div class="bar" style="width:{{profileDict['tonext']}}%"> </div>
                                     </div>
    
 
@@ -169,39 +169,23 @@
 
         <div class="widget widget-simple span8">
              <h2>Kwests to be completed</h2>
-                                <div class="widget-header header-small"> 
-                                    <h6><i class="fontello-icon-search-2"></i> Challenges</h6>
-                                </div>
                                 <div class="widget-content">
                                     <div class="widget-body">
                                         <table class="table table-condensed">
                                             <thead>
                                                 <tr>
                                                     <th scope="col" width="60%">Title</th>
-                                                    <th scope="col">Days to complete</th>
+                                                    <th scope="col">Deadline</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            {% for individual in mypen %}
                                                 <tr>
-                                                    <td>iPhone</td>
-                                                    <td class="text-right">36</td>
+                                                    <td>{{individual.pending_title}}</td> 
+                                                    <td class="text-right">{{individual.pending_timeLeft}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Apple</td>
-                                                    <td class="text-right">265</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Computer</td>
-                                                    <td class="text-right">184</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>camera</td>
-                                                    <td class="text-right">19</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>blue</td>
-                                                    <td class="text-right">27</td>
-                                                </tr>
+
+                                            {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>
