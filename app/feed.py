@@ -84,14 +84,7 @@ class Feed(flask.views.MethodView):
 		print chalDict
 		return flask.render_template('feed.html', chalDict)
 
-	def acceptChallenge(self, id):
-		new_transaction=database.UserChallengeJoin()
-		new_transaction.challengeId=id
-		new_transaction.email=session['email']
-		new_transaction.status='accepted'
-		database.db.session.add(new_transaction)
-		database.db.session.commit()
-		print "acceptChallenge"
+
 
 	def upvoteChallenge(self, id):
 		challengeNeeded=database.Challenges.query.get(challengeId=id)
