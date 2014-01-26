@@ -23,9 +23,9 @@ class Profile(flask.views.MethodView):
 		accepted = 0
 		for check in result:
 			if check.email ==session['email']:
-				if check.status==0:
+				if check.status=='created':
 					counter+=1
-				if check.status==1:
+				if check.status=='accepted':
 					accepted+=1
 					todo.append(check.challengeId)
 		userStat = database.Users.query.get(session['email'])
@@ -60,13 +60,12 @@ class Profile(flask.views.MethodView):
 							'pending_timeLeft': pending_timeLeft,
 							'created': counter,
 							'accepted': accepted,
-							'completed':won})
-		print profileDict['name']
+							'completed':won	} )
+
 		return flask.render_template('profile.html', profileDict=profileDict)
 
 
-
 	def post(self):
-		return flask.render_template('profile.html')
-	
+		print profileDict['name']
+		return flask.render_template('profile.html', profileDict=profileDict)
 
