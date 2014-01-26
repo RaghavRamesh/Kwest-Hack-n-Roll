@@ -106,7 +106,7 @@
                         <h5 class="media-heading">{{ profileDict['name'] }} </h5>
                         
                         
-                        <p class="data">Level: 5 Xp: 300</p>
+                        <p class="data">Level: {{ profileDict['level'] }} Xp: {{ profileDict['xp'] }}</p>
                    
                   
                         
@@ -132,7 +132,7 @@
                                     <h6><i class="fontello-icon-back-in-time" align = "center"></i> Challenges posted</h6>
                                 </div>
                                 <div class="section-content" align = "center" >
-                                    <h2 class="statistic-values">20</h2>
+                                    <h2 class="statistic-values">{{ profileDict['created'] }}</h2>
                                 </div>
                             </div>
                             <div class="statistic-box well well-black span4">
@@ -140,7 +140,7 @@
                                     <h6><i class="fontello-icon-back-in-time"></i> Challenges Accepted</h6>
                                 </div>
                                 <div class="section-content" align = "center">
-                                    <h2 class="statistic-values">30</h2>
+                                    <h2 class="statistic-values">{{ profileDict['accepted'] }}</h2>
                                 </div>
                             </div>
                             <div class="statistic-box well well-black span4">
@@ -148,7 +148,7 @@
                                     <h6><i class="fontello-icon-back-in-time"></i> Challenges Completed</h6>
                                 </div>
                                 <div class="section-content" align = "center">
-                                    <h2 class="statistic-values">25</h2>
+                                    <h2 class="statistic-values">{{ profileDict['completed'] }}</h2>
                                 </div>
                             </div>
           
